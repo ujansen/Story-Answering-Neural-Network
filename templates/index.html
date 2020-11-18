@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Story Question Answering</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="static\style.css">
+
+</head>
+
+<body>
+ <div class="login">
+	<h2>Story Question Answering</h2>
+  <h5>The words I know are {{ vocabulary }}. Please do not use any other words.</h5>
+  <h5>Create a story using the names and the locations, and then proceed to ask where a certain person is.</h5>
+  <br>
+    <form action="{{ url_for('predict')}}"method="post">
+    	<textarea name="story" placeholder="Story" required="required" /></textarea>
+        <input type="text" name="question" placeholder="Question" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Answer</button>
+    </form>
+
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
